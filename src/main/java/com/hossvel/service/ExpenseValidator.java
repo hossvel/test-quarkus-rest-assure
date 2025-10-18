@@ -1,5 +1,6 @@
-package com.hossvel;
+package com.hossvel.service;
 
+import com.hossvel.model.Expense;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 

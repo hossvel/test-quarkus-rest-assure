@@ -1,5 +1,7 @@
 package com.hossvel;
 
+import com.hossvel.model.Expense;
+import com.hossvel.resource.ExpenseResource;
 import io.quarkus.test.common.http.TestHTTPEndpoint;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;

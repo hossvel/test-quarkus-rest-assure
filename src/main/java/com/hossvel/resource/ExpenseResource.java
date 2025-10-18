@@ -1,5 +1,8 @@
-package com.hossvel;
+package com.hossvel.resource;
 
+
+import com.hossvel.model.Expense;
+import com.hossvel.service.ExpenseValidator;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -40,6 +43,7 @@ public class ExpenseResource {
     @Path( "{uuid}" )
     @Transactional
     public List<Expense> delete( @PathParam( "uuid" ) final UUID uuid ) {
+       System.out.println("UUUUUUUUUUUUUUUUU "+uuid);
         long numExpensesDeleted = Expense.delete( "uuid", uuid );
 
         if ( numExpensesDeleted == 0 ) {

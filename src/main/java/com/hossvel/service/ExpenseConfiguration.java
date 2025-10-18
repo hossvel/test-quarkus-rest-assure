@@ -1,4 +1,4 @@
-package com.hossvel;
+package com.hossvel.service;
 
 import io.smallrye.config.ConfigMapping;
 

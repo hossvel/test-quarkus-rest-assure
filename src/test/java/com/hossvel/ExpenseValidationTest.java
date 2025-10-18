@@ -1,6 +1,9 @@
 package com.hossvel;
 
 
+import com.hossvel.model.Expense;
+import com.hossvel.service.ExpenseConfiguration;
+import com.hossvel.service.ExpenseValidator;
 import io.quarkus.test.junit.QuarkusTest;
 import jakarta.inject.Inject;
 import org.junit.jupiter.api.Test;
@@ -32,7 +35,7 @@ public class ExpenseValidationTest {
         assertFalse( validator.isValid( expense ) );
     }
 
-    private Expense givenExpenseWithAmount( BigDecimal amount ) {
+    private Expense givenExpenseWithAmount(BigDecimal amount ) {
         return Expense.of( "Max amount expense", Expense.PaymentMethod.CREDIT_CARD, amount.toString() );
     }
 }

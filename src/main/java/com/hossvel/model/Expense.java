@@ -1,4 +1,4 @@
-package com.hossvel;
+package com.hossvel.model;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import jakarta.persistence.Entity;
@@ -12,7 +12,7 @@ import java.util.UUID;
 @Entity
 public class Expense extends PanacheEntity {
 
-    enum PaymentMethod {
+   public enum PaymentMethod {
         CASH, CREDIT_CARD, DEBIT_CARD,
     }
 
