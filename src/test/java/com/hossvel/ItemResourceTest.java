@@ -10,6 +10,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -30,17 +31,18 @@ public class ItemResourceTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     public void testGetItems() {
         given()
                 .when().get("/items")
                 .then().statusCode(200)
-                .contentType(ContentType.JSON);
+                .contentType(ContentType.JSON).body( "size()", is( 1 ) )
+                .body("name[0]", equalTo("Mouse"));
 
     }
 
     @Test
-    @Order(2)
+    @Order(3)
     public void testUpdateItem() {
         given()
                 .contentType("application/json")
@@ -52,7 +54,7 @@ public class ItemResourceTest {
     }
 
     @Test
-    @Order(3)
+    @Order(4)
     public void testDeleteItem204() {
         given()
                 .when().delete("/items/1")
@@ -61,7 +63,7 @@ public class ItemResourceTest {
 
 
     @Test
-    @Order(3)
+    @Order(4)
     public void testDeleteItem404() {
         given()
                 .when().delete("/items/10")
@@ -69,7 +71,7 @@ public class ItemResourceTest {
     }
 
     @Test
-    @Order(4)
+    @Order(5)
     public void testCreateAndGetItem() {
         // Crear un ítem
         String json = "{\"name\":\"Teclado\",\"price\":150.0}";
