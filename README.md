@@ -60,3 +60,20 @@ If you want to learn more about building native executables, please consult <htt
 Easily start your REST Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+
+## Ejecutar test
+
+You can ejecutar test using:
+
+```shell script
+./mvnw quarkus:test
+```
+
+## Ejecutar test
+
+You can ejecutar especifico test using:
+
+```shell script
+./mvnw test -Dtest=ItemResourceTest
+```
